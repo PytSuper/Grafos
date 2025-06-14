@@ -1,3 +1,5 @@
+#Ejermplo
+
 import collections
 
 class Grafo:
@@ -33,7 +35,7 @@ class Grafo:
     def existe_arista(self, desde, hasta):
         return hasta in self.grafo.get(desde, [])
     
-    def bfs(self, inicio):
+    def bfs(self, inicio):#Búsqueda en Amplitud
         visitados = set()  # Conjunto para guardar los vertices ya visitados
         cola = collections.deque()  # Cola para los vertices a visitar
         
@@ -55,7 +57,7 @@ class Grafo:
                     cola.append(vecino)
         return recorrido
     
-    def dfs(self, inicio):
+    def dfs(self, inicio):  #Búsqueda en Profundidad
         visitados = set()
         recorrido = []
         
@@ -75,7 +77,7 @@ class Grafo:
     def imprimir_grafo(self):
         print("\n--- Representación del Grafo ---")
         for vertice, vecinos in self.grafo.items():
-            print(f"{vertice}: {', '.join(vecinos)}")
+            print(f"{vertice}: {',  '.join(vecinos)}")
         print("---")
     
     def es_conexo(self):
